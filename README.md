@@ -24,7 +24,7 @@ pela interface web do sistema iria demandar um certo tempo*
 
 **Adicionar segunda interface ao Ativo.**
 
-				{
+	       {
                     "type": 2,
                     "main": 1,
                     "useip": 1,
