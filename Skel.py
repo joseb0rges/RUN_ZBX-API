@@ -4,31 +4,57 @@ def banner():
     print(colored('''
 
 
-\t  _____     _     _     _           _    ____ ___ 
-\t |__  /__ _| |__ | |__ (_)_  __    / \  |  _ \_ _|
-\t   / // _` | '_ \| '_ \| \ \/ /   / _ \ | |_) | | 
-\t  / /_ (_| | |_) | |_) | |>  <   / ___ \|  __/| | 
-\t /____\__,_|_.__/|_.__/|_/_/\_\ /_/   \_\_|  |___|                                                 
+\t ██████╗ ██╗   ██╗███╗   ██╗    ███████╗██████╗ ██╗  ██╗      █████╗ ██████╗ ██╗
+\t ██╔══██╗██║   ██║████╗  ██║    ╚══███╔╝██╔══██╗╚██╗██╔╝     ██╔══██╗██╔══██╗██║
+\t ██████╔╝██║   ██║██╔██╗ ██║      ███╔╝ ██████╔╝ ╚███╔╝█████╗███████║██████╔╝██║
+\t ██╔══██╗██║   ██║██║╚██╗██║     ███╔╝  ██╔══██╗ ██╔██╗╚════╝██╔══██║██╔═══╝ ██║
+\t ██║  ██║╚██████╔╝██║ ╚████║    ███████╗██████╔╝██╔╝ ██╗     ██║  ██║██║     ██║
+\t ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝    ╚══════╝╚═════╝ ╚═╝  ╚═╝     ╚═╝  ╚═╝╚═╝     ╚═╝
+                                                                                 
     ''', 'red', attrs=['bold']))
     print("")
 
-
-def menu1():
+def menup():
     print(colored('''
-\t\t\t [1] - Import - Hosts  
-\t\t\t [2] - Update - Items  
+\t\t\t [1] - Imports 
+\t\t\t [2] - Updates  
 \t\t\t [3] - Reports         
 \t\t\t [4] - Exit            
 
     ''','blue', attrs=['bold']))
 
+def submenu1():
+    print(colored('''
+    
+    \t\t\t [1] - Hosts
+    \t\t\t [2] - ITService
+    \t\t\t [3] - Description           
+    \t\t\t [4] - Exit            
 
+        ''', 'blue', attrs=['bold']))
+
+def submenu2():
+
+    print(colored('''
+        \t\t\t [1] - Items           
+        \t\t\t [2] - Exit            
+            ''', 'blue', attrs=['bold']))
+
+
+def submenu3():
+
+    print(colored('''
+ 
+        \t\t\t [1] - Items           
+        \t\t\t [3] - Exit            
+ 
+            ''', 'blue', attrs=['bold']))
 
 def submenuitem():
     print(colored('''
 \t\t\t   1 - List unsupported items    |
 \t\t\t   2 - Quantity unsupported items|
-\t\t\t   3 - Disable unsupported items |
+\t\t\t   3 - Disable unsupported items|
 \t\t\t   4 - Exit       |
 
     ''','blue', attrs=['bold']))

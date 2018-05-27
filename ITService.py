@@ -7,8 +7,6 @@ class ITservice:
         self.__group = group
 
 
-
-
     def setFather_itservice(self):
 
         self.__zapi.service.create(name=self.__group,
@@ -16,6 +14,8 @@ class ITservice:
                                    showsla=1,
                                    goodsla=99.99,
                                    sortorder=1)
+
+        print("Item de Serviço Pai : {}, Criado com sucesso .... [OK]".format(self.__group))
 
     def get_FatherItservice_pid(self,group):
 
@@ -36,7 +36,7 @@ class ITservice:
                                    sortorder=1,
                                    parentid=self.get_FatherItservice_pid(self.__group))
 
-
+        print("Item de Serviço Filho : {}, Criado com sucesso .... [OK]".format(self.__hostname))
 
     def getChild_itservice_pid(self):
 
@@ -48,7 +48,6 @@ class ITservice:
 
         return parentIDChild
 
-
     def setChild_itservice_trigger(self,triggerid):
 
         self.__zapi.service.create(name=self.__hostname,
@@ -58,3 +57,5 @@ class ITservice:
                         sortorder=1,
                         parentid=self.getChild_itservice_pid(),
                         triggerid=triggerid)
+
+        print(" Trigger de item de Serviço  : {}, Criado com sucesso .... [OK]".format(self.__hostname))

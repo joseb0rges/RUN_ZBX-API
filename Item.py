@@ -1,17 +1,12 @@
 #-*- coding:utf-8 -*-
 import sys
 
-
-
-
 class Item(object):
 
     def __init__(self, zapi, hostname):
 
         self.__zapi=zapi
         self.__hostname=hostname
-
-
 
     def getItems(self,hostname):
         host = self.__zapi.host.get(filter={"host": self.__hostname})
@@ -24,7 +19,7 @@ class Item(object):
                                   filter={"state": 1},
                                   output='extend')
             if len(items) == 0:
-                print('\n\tNenhum item encontrado !!!.')
+                print('\n\t Nenhum item encontrado !!!.')
                 sys.exit(1)
             else:
 
@@ -42,7 +37,7 @@ class Item(object):
 
         return triggerId
 
-    def setUpdate(self):
+    def DisableItems(self):
 
         for item in self.getItems(self.__hostname):
             item.setdefault('name', 'unkonown')
@@ -52,13 +47,14 @@ class Item(object):
                 status=1
             )
 
-        print("\n\tItem: {} Desabilitado com sucesso ..... [OK] ".format(item['name']))
+        print("\n\t Item: {} Desabilitado com sucesso ..... [OK] ".format(item['name']))
 
-    def LNsuportados(self):
+    def LNSupported(self):
+
         for item in self.getItems(self.__hostname):
             item.setdefault('name', 'unkonown')
             item.setdefault('error', 'unkonown')
             print("\n\tNome: {} Error: {}".format(item['name'], item['error']))
 
-    def LQNsuportados(self):
+    def LQNSupported(self):
         print('\n\tO host possui: ' + str(len(self.getItems(self.__hostname))) + ' items não suportados \n')

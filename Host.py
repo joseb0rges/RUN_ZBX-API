@@ -3,14 +3,14 @@
 class Host:
 
 
-    def __init__(self, zapi, hostname,host_group_id,template_id):
+    def __init__(self, zapi,hostname,host_group_id,template_id):
 
         self.__zapi = zapi
         self.__hostname = hostname
         self.__host_group_id = host_group_id
         self.__template_id = template_id
 
-    def setHost(self,hostip1,hostip2,vmacro):
+    def setHost(self,hostip):
 
             self.__zapi.host.create(
 
@@ -19,30 +19,16 @@ class Host:
                     "type":1,
                     "main": 1,
                     "useip":1,
-                    "ip":hostip1,
+                    "ip":hostip,
                     "dns":"",
                     "port":"10050"
-                },{
-                    "type": 2,
-                    "main": 1,
-                    "useip": 1,
-                    "ip":hostip2,
-                    "dns": "",
-                    "port": "161"
-
-                }],
-
-                macros=[{
-                    "macro":"{$SNMP_COMMUNITY}",
-                    "value":vmacro
                 }],
                 groups=[{
                     "groupid":self.__host_group_id
                 }],
                 templates=self.__template_id)
 
-            print('\t\nHost: {} criado com sucesso .... [OK] '.format(self.__hostname))
-
+            print('\t\n Host: {} Criado com Sucesso .... [OK] '.format(self.__hostname))
 
 
     def getHostID(self):
