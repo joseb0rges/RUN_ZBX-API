@@ -18,6 +18,11 @@ pela interface web do sistema iria demandar um certo tempo*
 - Liste e Desabilite items não suportados .
 
 
+**- Formato de importacao.**
+
+**Host** *Para Importacao de hosts e seguido como campos, nome do host(hostname), ip do host(IP Adress), grupo do host(HosGroup), template do host(Template)*
+
+
 **Personalização de Metodos.**
 
 É possivel customizar os metodos de acordo com sua necessidade .
@@ -44,7 +49,7 @@ pela interface web do sistema iria demandar um certo tempo*
 
 *obs => É possivel realizar tais alterações, modificando o JSON dos metodos.*
 
-#### Pre-requisitos 
+#### Pre-requisitos
 
 ##### Instalar bibliotecas necessarias.
 
@@ -62,8 +67,3 @@ python3 ZabbixAPIUltius.py
 #### Referencias
 
 https://www.zabbix.com/documentation/3.0/pt/manual/api
-
-
-
-
-

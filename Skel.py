@@ -52,9 +52,16 @@ def submenu3():
 
 def submenuitem():
     print(colored('''
-\t\t\t   1 - List unsupported items    |
-\t\t\t   2 - Quantity unsupported items|
-\t\t\t   3 - Disable unsupported items|
-\t\t\t   4 - Exit       |
+\t\t\t   [1] - Disable unsupported items|
+\t\t\t   [2] - Exit       |
+
+    ''','blue', attrs=['bold']))
+
+
+def submenuiteml():
+    print(colored('''
+\t\t\t   [1] - List unsupported items    |
+\t\t\t   [2] - Quantity unsupported items|
+\t\t\t   [3] - Exit       |
 
     ''','blue', attrs=['bold']))

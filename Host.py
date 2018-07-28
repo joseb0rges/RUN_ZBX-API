@@ -1,3 +1,4 @@
+from termcolor import colored
 
 
 class Host:
@@ -11,7 +12,7 @@ class Host:
         self.__template_id = template_id
 
     def setHost(self,hostip):
-
+        try:
             self.__zapi.host.create(
 
                 host=self.__hostname,
@@ -28,7 +29,10 @@ class Host:
                 }],
                 templates=self.__template_id)
 
-            print('\t\n Host: {} Criado com Sucesso .... [OK] '.format(self.__hostname))
+            print(colored('\t\n Host: {} criado com sucesso .... [OK] '.format(self.__hostname),'green'))
+
+        except Exception as e:
+                print(colored("\t\nError: {}".format(e),'red'))
 
 
     def getHostID(self):

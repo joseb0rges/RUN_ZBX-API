@@ -22,6 +22,8 @@ while op != 4:
 
                 file = input("\n\tDigite o caminho do arquivo: ")
                 I = Import(zapi, file)
+                num = I.contar_linhas_arquivo(file)
+                I.progresso(num)
                 I.ImportHost()
                 sys.exit(1)
             if op1 == 2:
@@ -56,35 +58,47 @@ while op != 4:
                     if ops1 == 1:
                         hostname = input("\n\tDigite o hostname do host:")
                         I = Item(zapi,hostname)
-                        I.LNSupported()
-                        sys.exit(1)
-
-                    if ops1 == 2:
-                        hostname = input("\n\tDigite o hostname do host:")
-                        I = Item(zapi,hostname)
-                        I.LQNSupported()
-                        sys.exit(1)
-
-                    if ops1 == 3:
-                        hostname = input("\n\tDigite o hostname do host:")
-                        I = Item(zapi,hostname)
                         I.DisableItems()
                         sys.exit(1)
 
 
-                    if ops1 == 4:
+                    if ops1 == 2:
                          sys.exit(1)
             if op2 == 2:
-                print("Ainda em desenvolvimento")
-
-            if op2 == 3:
                 sys.exit(1)
 
+
     if op == 3:
+        op3 = 0
+        while op3 != 2:
+            os.system('clear')
+            banner()
+            submenu3()
+            op3 = int(input('\n\tDigite uma Opção:'))
 
-        print("Ainda em desenvolvimento")
-        sys.exit(1)
+            if op3 == 1:
+                ops3 = 0
+                while ops3 != 3:
+                    os.system('clear')
+                    banner()
+                    submenuiteml()
+                    ops3 = int(input('\n\tDigite uma Opção:'))
+                    if ops3 == 1:
+                        hostname = input("\n\tDigite o hostname do host:")
+                        I = Item(zapi, hostname)
+                        I.LNSupported()
+                        sys.exit(1)
 
+                    if ops3 == 2:
+                        hostname = input("\n\tDigite o hostname do host:")
+                        I = Item(zapi, hostname)
+                        I.LQNSupported()
+                        sys.exit(1)
+
+                    if ops3 == 3:
+                        sys.exit(1)
+            if op3 == 2:
+                sys.exit(1)
 
 
     if op == 4:

@@ -2,6 +2,8 @@ import csv
 from biblioteca import *
 from ITService import  ITservice
 from Item import  Item
+import pyprog
+from time import sleep
 
 
 class Import:
@@ -28,6 +30,7 @@ class Import:
 
             H = Host(self.__zapi,host,group_id.getGroupID(),template_id.getTemplate())
             H.setHost(ip)
+
 
 
     def ImportSLA(self):
@@ -61,4 +64,23 @@ class Import:
             h = Host(self.__zapi,host,host_group_id=None,template_id=None)
             upd = UpdateHost(self.__zapi,h.getHostID())
             upd.updateDescription(description,host)
+
+    def contar_linhas_arquivo(self,file):
+
+        with open(self.__file, 'r') as f:
+            t = len(f.readlines())
+            f.close()
+            return (t)
+
+    def progresso(self,x):
+
+        prog = pyprog.ProgressBar("\tImportando Hosts  ", "[OK]", x)
+        prog.update()
+
+        for i in range(x):
+            sleep(0.1)
+            prog.set_stat(i + 1)
+            prog.update()
+
+        prog.end()
 

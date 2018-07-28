@@ -1,6 +1,9 @@
 #-*- coding:utf-8 -*-
 import sys
 
+from termcolor import colored
+
+
 class Item(object):
 
     def __init__(self, zapi, hostname):
@@ -11,7 +14,7 @@ class Item(object):
     def getItems(self,hostname):
         host = self.__zapi.host.get(filter={"host": self.__hostname})
         if len(host) == 0:
-            print('\n\tERROR:O nome de host não existe !!!.')
+            print(colored('\n\tERROR:O nome de host não existe !!!.','red'))
         else:
             items = self.__zapi.item.get(monitored=1,
                                   webitems=1,
@@ -38,16 +41,19 @@ class Item(object):
         return triggerId
 
     def DisableItems(self):
+        try:
+             for item in self.getItems(self.__hostname):
+                item.setdefault('name', 'unkonown')
+                item.setdefault('error', 'unkonown')
+                self.__zapi.item.update(
+                    itemid=item['itemid'],
+                    status=1
+                 )
 
-        for item in self.getItems(self.__hostname):
-            item.setdefault('name', 'unkonown')
-            item.setdefault('error', 'unkonown')
-            self.__zapi.item.update(
-                itemid=item['itemid'],
-                status=1
-            )
+             print("\n\t Item: {} Desabilitado com sucesso ..... [OK] ".format(item['name']))
 
-        print("\n\t Item: {} Desabilitado com sucesso ..... [OK] ".format(item['name']))
+        except Exception as e:
+                print(colored("\n\tError: {}".format(e),'red'))
 
     def LNSupported(self):
 
