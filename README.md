@@ -18,10 +18,16 @@ pela interface web do sistema iria demandar um certo tempo*
 - Liste e Desabilite items não suportados .
 
 
-**- Formato de importacao.**
+**- Formato de importação.**
 
-**Host** *Para Importacao de hosts e seguido como campos, nome do host(hostname), ip do host(IP Adress), grupo do host(HosGroup), template do host(Template)*
-
+**Host**
+*Para Importacao de hosts é seguido como campos:*
+```
+ - nome do host(hostname);
+ - ip do host(IP Adress);
+ - grupo do host(HosGroup);
+ - template do host(Template).
+```
 
 **Personalização de Metodos.**
 
