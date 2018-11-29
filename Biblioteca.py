@@ -1,6 +1,6 @@
 #import urllib3
 from pyzabbix import ZabbixAPI
-from config import *
+from Config import *
 from Template import *
 from Group import *
 from UpdateHost import *
@@ -14,5 +14,3 @@ from Item import *
 zapi = ZabbixAPI(server)
 zapi.session.verify = False
 zapi.login(username,password)
-
-

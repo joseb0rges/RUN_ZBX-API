@@ -10,44 +10,46 @@ def banner():
 \t ██╔══██╗██║   ██║██║╚██╗██║     ███╔╝  ██╔══██╗ ██╔██╗╚════╝██╔══██║██╔═══╝ ██║
 \t ██║  ██║╚██████╔╝██║ ╚████║    ███████╗██████╔╝██╔╝ ██╗     ██║  ██║██║     ██║
 \t ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝    ╚══════╝╚═════╝ ╚═╝  ╚═╝     ╚═╝  ╚═╝╚═╝     ╚═╝
-                                                                                 
+
     ''', 'red', attrs=['bold']))
     print("")
 
 def menup():
     print(colored('''
-\t\t\t [1] - Imports 
-\t\t\t [2] - Updates  
-\t\t\t [3] - Reports         
-\t\t\t [4] - Exit            
+\t\t\t [1] - Imports
+\t\t\t [2] - Updates
+\t\t\t [3] - Reports
+\t\t\t [4] - Exit
 
     ''','blue', attrs=['bold']))
 
 def submenu1():
     print(colored('''
-    
+
     \t\t\t [1] - Hosts
     \t\t\t [2] - ITService
-    \t\t\t [3] - Description           
-    \t\t\t [4] - Exit            
+    \t\t\t [3] - Description
+    \t\t\t [4] - Hostname
+    \t\t\t [5] - Interface 
+    \t\t\t [6] - Exit
 
         ''', 'blue', attrs=['bold']))
 
 def submenu2():
 
     print(colored('''
-        \t\t\t [1] - Items           
-        \t\t\t [2] - Exit            
+        \t\t\t [1] - Items
+        \t\t\t [2] - Exit
             ''', 'blue', attrs=['bold']))
 
 
 def submenu3():
 
     print(colored('''
- 
-        \t\t\t [1] - Items           
-        \t\t\t [3] - Exit            
- 
+
+        \t\t\t [1] - Items
+        \t\t\t [3] - Exit
+
             ''', 'blue', attrs=['bold']))
 
 def submenuitem():

@@ -1,4 +1,4 @@
-from biblioteca import *
+from Biblioteca import *
 import os
 
 op= 0
@@ -12,7 +12,7 @@ while op != 4:
 
     if op == 1:
         op1 =0
-        while op1 != 4:
+        while op1 != 6:
             os.system('clear')
             banner()
             submenu1()
@@ -26,17 +26,38 @@ while op != 4:
                 I.progresso(num)
                 I.ImportHost()
                 sys.exit(1)
+
+            # - Importando SLA
             if op1 == 2:
                 file = input("\n\tDigite o caminho do arquivo: ")
                 I = Import(zapi, file)
                 I.ImportSLA()
                 sys.exit(1)
+
+            # - Importando Descrição
             if op1 == 3:
                 file = input("\n\tDigite o caminho do arquivo: ")
                 I = Import(zapi, file)
                 I.ImportDescriptionHost()
                 sys.exit(1)
+
+            # - Importando Visible Hostname
             if op1 == 4:
+                file = input("\n\tDigite o caminho do arquivo: ")
+                I = Import(zapi, file)
+                I.ImportVisibleHostName()
+                sys.exit(1)
+
+            # -  Importando nova interface
+            if op1 == 5:
+                file = input("\n\tDigite o caminho do arquivo: ")
+                I = Import(zapi, file)
+                num = I.contar_linhas_arquivo(file)
+                I.progresso(num)
+                I.ImportNewInterface()
+                sys.exit(1)
+
+            if op1 == 6:
                 sys.exit(1)
 
     if op == 2:
@@ -104,16 +125,3 @@ while op != 4:
     if op == 4:
         print("Bye............ :)")
         sys.exit(1)
-
-
-
-
-
-
-
-
-
-
-
-
-
