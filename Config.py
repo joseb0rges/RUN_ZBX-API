@@ -1,4 +1,4 @@
 #coding: utf-8
-server = 'http://xxx.xxx.xx.xx/zabbix'
-username = 'xxxx'
-password = 'xxxx'
+server = 'http://192.168.10.112/zabbix'
+username = 'Admin'
+password = 'zabbix'
