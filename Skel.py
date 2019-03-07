@@ -48,6 +48,7 @@ def submenu3():
     print(colored('''
 
         \t\t\t [1] - Items
+        \t\t\t [2] - It Services
         \t\t\t [3] - Exit
 
             ''', 'blue', attrs=['bold']))

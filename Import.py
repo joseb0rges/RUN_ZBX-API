@@ -45,9 +45,11 @@ class Import:
             group = data[1]
             item = data[2]
 
-            its = ITservice(self.__zapi,host,group)
+            its = ITservice(self.__zapi,host)
             i = Item(self.__zapi,host)
-            its.setChild_itservices(i.getItem_triggerid(item))
+            its.setChild_itservices(group,i.getItem_triggerid(item))
+
+
 
 
 

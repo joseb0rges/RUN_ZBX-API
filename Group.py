@@ -14,3 +14,11 @@ class Group():
             print('ERROR:O nome de grupo não existe !!!.')
         else:
             return group[0]['groupid']
+
+    def get_hostgroup(self,gpid):
+
+        hosts = self.__zapi.host.get(groupids=gpid, output=['hostid', 'name'])
+
+        for host in hosts:
+                return host['name']
+

@@ -119,6 +119,18 @@ while op != 4:
                     if ops3 == 3:
                         sys.exit(1)
             if op3 == 2:
+                grp = input("\n\tDigite o hostgroup do host:")
+                g = Group(zapi,grp)
+                hostname = g.get_hostgroup(g.getGroupID())
+
+                its = ITservice(zapi,hostname,grp)
+                it=its.getChild_itservice_pid()
+                print(it)
+
+
+
+                sys.exit(1)
+            if op3 == 3:
                 sys.exit(1)
 
 
